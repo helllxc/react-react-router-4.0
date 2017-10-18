@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 class SelectArray extends Component {
     constructor (props){
         super (props)
+        console.log(props)
         this.state = ({
             array:['Mike','Linzy','Tracy','Yezi'],
             value: ''
@@ -24,7 +25,6 @@ class SelectArray extends Component {
                              return <option value={item} key={idx}>{item}</option>
                         })
                     }
-
                 </select>
             </div>
         )

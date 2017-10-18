@@ -27,8 +27,8 @@ class Toggle extends Component{
 }
 
 class ToggleBtn extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
     }
     render(){
         return(

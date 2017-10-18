@@ -3,7 +3,8 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Route,
-    Link
+    Link,
+    Redirect
 } from 'react-router-dom'
 import Toggle from '../components/toggle'
 import SelectArray from '../components/select'
@@ -14,15 +15,15 @@ const BasicExample = () => (
         <div>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/Toggle">Toggle</Link></li>
-                <li><Link to="/SelectArray">SelectArray</Link></li>
+                <li><Link to="/Toggle/12300">Toggle</Link></li>
+                <li><Link to="/SelectArray/2">SelectArray</Link></li>
             </ul>
 
             <hr/>
 
             <Route exact path="/" component={Home}/>
-            <Route path="/Toggle" component={Toggle}/>
-            <Route path="/SelectArray" component={SelectArray}/>
+            <Route path="/Toggle/:id" component={Toggle}/>
+            <Route path="/SelectArray/:id" component={SelectArray}/>
         </div>
     </Router>
 )
