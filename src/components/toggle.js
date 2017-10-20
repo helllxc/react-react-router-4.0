@@ -1,4 +1,7 @@
 import React, { Component} from 'react'
+import {
+    Link,
+} from 'react-router-dom'
 class Toggle extends Component{
     constructor(props){
         super(props)
@@ -19,6 +22,7 @@ class Toggle extends Component{
         var name = this.props.name
         return(
             <div>
+                <Link to="/SelectArray" style={{color:'red',textdecoration:'none',fontSize:'20px'}}>SelectArray</Link>
                 <p>{text}  {name}</p>
                 <button onClick={this.change}>点击切换</button>
             </div>
@@ -29,10 +33,14 @@ class Toggle extends Component{
 class ToggleBtn extends Component{
     constructor(props){
         super(props)
+        console.log(this.props.match)
     }
     render(){
         return(
-            <Toggle name='James' url='123'/>
+            <div>
+                <p>{this.props.match.params.id}</p>
+                <Toggle name='James' url='123'/>
+            </div>
         )
     }
 }

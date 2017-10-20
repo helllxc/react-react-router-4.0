@@ -6,6 +6,7 @@ import {
     Link,
     Redirect
 } from 'react-router-dom'
+import Login from '../components/login/login'
 import Toggle from '../components/toggle'
 import SelectArray from '../components/select'
 import Home from '../components/home/home'
@@ -13,17 +14,16 @@ import Home from '../components/home/home'
 const BasicExample = () => (
     <Router>
         <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/Toggle/12300">Toggle</Link></li>
-                <li><Link to="/SelectArray/2">SelectArray</Link></li>
-            </ul>
+            {/*<ul>*/}
+                {/*<li><Link to="/">Home</Link></li>*/}
+                {/*<li><Link to="/Toggle/12300">Toggle</Link></li>*/}
+                {/*<li><Link to="/SelectArray">SelectArray</Link></li>*/}
+            {/*</ul>*/}
 
-            <hr/>
-
+            <Route path='/Login' component={Login}/>
             <Route exact path="/" component={Home}/>
             <Route path="/Toggle/:id" component={Toggle}/>
-            <Route path="/SelectArray/:id" component={SelectArray}/>
+            <Route path="/SelectArray" component={SelectArray}/>
         </div>
     </Router>
 )
