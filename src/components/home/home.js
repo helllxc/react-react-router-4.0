@@ -12,10 +12,10 @@ class home extends Component{
     }
     render(){
         return (
-            <div id='home'>
+            <div id='home' style={{marginTop:'50px'}}>
                 <div>
                     <Xheader></Xheader>
-                    <Link to="/index/Toggle/123" style={{color:'red',textdecoration:'none',fontSize:'20px'}}>Toggle</Link>
+                    {/*<Link to="/index/Toggle/123" style={{color:'red',textdecoration:'none',fontSize:'20px'}}>Toggle</Link>*/}
                     {/*<Btn> <Show isLogin={true}></Show></Btn>*/}
                     {this.props.children}
                 </div>
