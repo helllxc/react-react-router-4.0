@@ -17,6 +17,7 @@ class Toggle extends Component{
         this.setState({clicked:!this.state.clicked})
     }
     render(){
+        // debugger
         console.log(this.props)
         var text = this.state.clicked ? 'true' : 'false'
         var name = this.props.name

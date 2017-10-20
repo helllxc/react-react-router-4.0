@@ -20,7 +20,7 @@ class doubleWay extends Component{
         this.props.callback(event.target.value,this.props.name)
     }
     render(){
-        console.log(this.props.errorMsg)
+        console.log(this.props.children)
         var check = this.props.check.bind(this);
         var val = this.props.value
         let holder = this.props.placeholder
@@ -32,6 +32,7 @@ class doubleWay extends Component{
             <div>
                 <input type={type} value={val} placeholder={holder} onChange={this.handleChange} onBlur={(e)=>{this.b(this)}}/>
                 <p style={{display:display,color:'red'}}>{this.props.errorMsg}</p>
+                {this.props.children}
             </div>
         )
     }

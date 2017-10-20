@@ -4,27 +4,34 @@ import {
     BrowserRouter as Router,
     Route,
     Link,
-    Redirect
+    Switch
 } from 'react-router-dom'
+import App from '../App'
 import Login from '../components/login/login'
 import Toggle from '../components/toggle'
 import SelectArray from '../components/select'
 import Home from '../components/home/home'
-
 const BasicExample = () => (
     <Router>
-        <div>
-            {/*<ul>*/}
+        <App>
+            <div>
+                {/*<ul>*/}
                 {/*<li><Link to="/">Home</Link></li>*/}
-                {/*<li><Link to="/Toggle/12300">Toggle</Link></li>*/}
+                {/*<li><Link to="/index/Toggle/12300">Toggle</Link></li>*/}
                 {/*<li><Link to="/SelectArray">SelectArray</Link></li>*/}
-            {/*</ul>*/}
+                {/*</ul>*/}
 
-            <Route path='/Login' component={Login}/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/Toggle/:id" component={Toggle}/>
-            <Route path="/SelectArray" component={SelectArray}/>
-        </div>
+                <Route path='/Login' component={Login}/>
+                <Route exact path="/index">
+                    <Home>
+                        <Switch>
+                            <Route path="/index/Toggle/:id" component={Toggle}/>
+                            <Route path="/index/SelectArray" component={SelectArray}/>
+                        </Switch>
+                    </Home>
+                </Route>
+            </div>
+        </App>
     </Router>
 )
 
