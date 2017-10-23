@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NavBar from '../nav/nav'
 class Xheader extends Component{
     constructor(props){
         super(props)
@@ -6,21 +7,24 @@ class Xheader extends Component{
     render(){
         return(
             <div id='header'>
-                <div style={{color: 'white',
-                    height: '50px',
-                    lineHeight: '50px',
-                    background: '#282828',
-                    position: 'fixed',
-                    left: '0px',
-                    top: '0px',
-                    width: '100%',
-                    zIndex: '10'}}>
-                    <div className='fl'>
-                        <i className="icon-category iconfont" style={{padding: '0px 10px',height: '100%',display: 'inline-block'}}></i>
-                        <span>卖座电影</span>
+                <header>
+                    <div style={{color: 'white',
+                        height: '50px',
+                        lineHeight: '50px',
+                        background: '#282828',
+                        position: 'fixed',
+                        left: '0px',
+                        top: '0px',
+                        width: '100%',
+                        zIndex: '10'}}>
+                        <div className='fl'>
+                            <i className="icon-category iconfont" style={{padding: '0px 10px',height: '100%',display: 'inline-block'}}></i>
+                            <span>卖座电影</span>
+                        </div>
                     </div>
-                </div>
-                {this.props.children}
+                    {this.props.children}
+                </header>
+                <NavBar></NavBar>
             </div>
         )
     }
