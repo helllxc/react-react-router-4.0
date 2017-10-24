@@ -3,6 +3,14 @@ import NavBar from '../nav/nav'
 class Xheader extends Component{
     constructor(props){
         super(props)
+        this.state = ({
+            show:false
+        })
+    }
+    showNav = () =>{
+        this.setState({
+            show:!this.state.show
+        })
     }
     render(){
         return(
@@ -18,13 +26,13 @@ class Xheader extends Component{
                         width: '100%',
                         zIndex: '10'}}>
                         <div className='fl'>
-                            <i className="icon-category iconfont" style={{padding: '0px 10px',height: '100%',display: 'inline-block'}}></i>
+                            <i className="icon-category iconfont" onClick={this.showNav} style={{padding: '0px 10px',height: '100%',display: 'inline-block'}}></i>
                             <span>卖座电影</span>
                         </div>
                     </div>
                     {this.props.children}
                 </header>
-                <NavBar></NavBar>
+                <NavBar isShow={this.state.show}></NavBar>
             </div>
         )
     }

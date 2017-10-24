@@ -20,7 +20,6 @@ const BasicExample = () => (
                 {/*<li><Link to="/index/Toggle/12300">Toggle</Link></li>*/}
                 {/*<li><Link to="/SelectArray">SelectArray</Link></li>*/}
                 {/*</ul>*/}
-
                 <Route path='/Login' component={Login}/>
                 <Route exact path="/index">
                     <Home>
